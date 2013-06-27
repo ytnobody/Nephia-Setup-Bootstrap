@@ -25,7 +25,7 @@ my %args = (
 
     name            => 'Nephia-Setup-Bootstrap',
     module_name     => 'Nephia::Setup::Bootstrap',
-    allow_pureperl => 0,
+    allow_pure_perl => 0,
 
     script_files => [glob('script/*'), glob('bin/*')],
 

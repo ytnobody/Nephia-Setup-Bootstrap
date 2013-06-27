@@ -1,7 +1,6 @@
 package Nephia::Setup::Bootstrap;
 use strict;
 use warnings;
-use parent qw( Nephia::Setup::Base );
 
 use Nephia::Setup::Bootstrap::TwitterBootstrap;
 use Nephia::Setup::Bootstrap::jQuery;
@@ -34,10 +33,9 @@ __DATA__
 
 index_template_file
 ---
-? my $c = shift;
 <html>
 <head>
-  <title><?= $c->{title} ?> - powerd by Nephia</title>
+  <title>[= title =] - powerd by Nephia</title>
   <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css" />
   <link rel="shortcut icon" href="/static/favicon.ico" />
   <script src="/static/bootstrap/js/bootstrap.js"></script>
@@ -53,7 +51,7 @@ index_template_file
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
-        <span class="brand"><?= $c->{title} ?> <small>(<?= $c->{envname} ?>)</small></span>
+        <span class="brand">[= title =] <small>([= envname =])</small></span>
       </div>
     </div>
   </div>
@@ -62,7 +60,7 @@ index_template_file
     <h2>Hello, Nephia world!</h2>
     <p>Nephia is a mini web-application framework.</p>
     <pre>
-    ### <?= $c->{apppath} ?>
+    ### [= apppath =]
     use Nephia;
 
     # <a href="/data">JSON responce sample</a>
